@@ -10,7 +10,7 @@ const ParticleComponent = () => {
     }, []);
 
     return (
-        <div id="particles-js" className='fixed top-0 left-0 w-full h-full z-[1]'></div>
+        <div id="particles-js" className='bg-black fixed top-0 left-0 w-full h-full'></div>
     );
 };
 

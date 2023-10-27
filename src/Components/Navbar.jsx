@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ linkTo1, li1 }) => {
   let [open, setOpen] = useState(false);
   return (
     <div className='shadow-2xl w-full fixed top-0 left-0 z-[100]'>
       <div className={`md:flex items-center justify-between bg-teal-700 py-4 md:px-10 px-7`}>
         <div className='font-semibold text-2xl cursor-pointer flex items-center gap-1'>
-          <h1 className='text-white text-2xl'> <a>Blogging App</a> </h1>
+          <h1 className='text-white text-2xl hover:text-teal-950 duration-500 cursor-pointer'> <Link to={'/'}>Website Name</Link> </h1>
         </div>
         <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
           {
@@ -25,7 +25,7 @@ const Navbar = () => {
               />{li1}</Link>
           </li> */}
           <li className='md:ml-8 md:my-0 my-7 font-semibold text-lg '>
-            <a /* onClick={onClick2} */ className={`text-white hover:text-blue-400   duration-500 cursor-pointer`}>login</a>
+            <Link to={linkTo1} className={`text-white hover:text-teal-950 duration-500 cursor-pointer`}>{li1}</Link>
           </li>
         </ul>
       </div>
