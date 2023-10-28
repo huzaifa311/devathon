@@ -2,10 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
-import Private from "../Pages/Private";
+// import Private from "../Pages/Private";
 import AuthRoute from "../Routes/ProtectedRoute";
 import ProtectedRoute from "../Routes/Authroute";
 import Index from "../Pages/Index";
+import Investor from "../Pages/Investor";
+import User from "../Pages/User";
 
 const Routing = () => {
   return (
@@ -18,7 +20,8 @@ const Routing = () => {
         </Route>
 
         <Route element={<ProtectedRoute />} >
-          <Route path="/private" element={<Private />} />
+          <Route path="/investor" element={<Investor />} />
+          <Route path="/user" element={<User />} />
         </Route>
 
       </Routes>

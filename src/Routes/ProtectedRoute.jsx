@@ -1,12 +1,18 @@
-import React from 'react'
-import { Navigate, Outlet, useNavigate } from 'react-router-dom'
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
 const AuthRoute = () => {
-    return !localStorage.getItem('user') ? (
-        <Outlet />
-    ) : (
-        <Navigate to={'/private'} />
-  )
-}
+  const user = JSON.parse(localStorage.getItem("user"));
 
-export default AuthRoute
+  if (user) {
+    if (user.signupType === "User") {
+      return <Navigate to={"/user"} />;
+    } else if (user.signupType === "Investor") {
+      return <Navigate to={"/investor"} />;
+    }
+  }
+
+  return <Outlet />;
+};
+
+export default AuthRoute;

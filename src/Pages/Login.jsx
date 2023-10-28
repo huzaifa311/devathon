@@ -7,6 +7,7 @@ import CircularColor from "../Components/Loader";
 import { signInWithEmailAndPassword, auth, db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import Swal from 'sweetalert2';
+import Header from "../Components/Header";
 
 const Login = () => {
     const [loginEmail, setLoginEmail] = useState("");
@@ -51,7 +52,7 @@ const Login = () => {
         <>
             <ParticleComponent />
             <div className="w-full h-full relative top-4">
-                <Navbar linkTo1={'/signup'} li1={'Signup'} />
+                <Header li={'Signup'} linkTo={'/signup'} />
                 <div className="">
                     <h4 className="text-4xl text-white font-bold ml-12 mt-[100px] ">
                         Login
